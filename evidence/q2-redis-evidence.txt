@@ -1,0 +1,8 @@
+]633;E;echo "=== REDIS PING ===";c805e4fc-012f-46f6-b987-01e55c3ce698]633;C=== REDIS PING ===
+PONG
+
+=== CACHED KEYS ===
+prediction:WIN a FREE iPhone now!
+
+=== TTL ===
+119

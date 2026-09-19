@@ -1,0 +1,3 @@
+NAME          IMAGE            COMMAND                  SERVICE   CREATED         STATUS                   PORTS
+q_2-api-1     spam-api:q2      "uvicorn app:app --h…"   api       8 minutes ago   Up 8 minutes             0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+q_2-cache-1   redis:7-alpine   "docker-entrypoint.s…"   cache     8 minutes ago   Up 8 minutes (healthy)   6379/tcp

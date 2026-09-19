@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.git/
+.DS_Store
+model.joblib
+spam_dataset.csv

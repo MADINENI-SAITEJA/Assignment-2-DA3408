@@ -1,0 +1,34 @@
+
+FROM python:3.14-bookworm AS builder
+
+WORKDIR /build
+
+COPY requirements-train.txt .
+
+RUN pip install --no-cache-dir -r requirements-train.txt
+
+COPY generate_dataset.py .
+COPY train.py .
+
+RUN python generate_dataset.py
+
+RUN python train.py \
+    --data spam_dataset.csv \
+    --out model.joblib
+
+
+FROM python:3.14-slim-bookworm AS runtime
+
+WORKDIR /app
+
+COPY requirements-runtime.txt .
+
+RUN pip install --no-cache-dir -r requirements-runtime.txt
+
+COPY app.py .
+
+COPY --from=builder /build/model.joblib ./model.joblib
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

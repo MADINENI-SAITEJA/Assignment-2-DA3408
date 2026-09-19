@@ -1,0 +1,11 @@
+api-1  | INFO:     Started server process [1]
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1  | Loaded spam detection model on pod=08f1b6fb3b80 node=unknown
+api-1  | Connected to Redis at cache:6379
+api-1  | INFO:     172.18.0.1:55532 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | CACHE MISS latency_ms=12.7894 text='WIN a FREE iPhone now!'
+api-1  | INFO:     172.18.0.1:60150 - "POST /predict HTTP/1.1" 200 OK
+api-1  | CACHE HIT latency_ms=0.5577 text='WIN a FREE iPhone now!'
+api-1  | INFO:     172.18.0.1:59014 - "POST /predict HTTP/1.1" 200 OK
